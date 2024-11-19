@@ -1,0 +1,350 @@
+*{
+    margin:0;
+}
+
+.logo{
+    width: auto;
+    height: 75px;
+    margin-right: 20px;
+    margin-left: 20px;
+
+}
+
+
+.nav-bar{
+
+    width: 100%;
+    height:75px;
+    z-index: -100;
+
+}
+
+.div-container-1 {
+    width: 100%;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    position: relative;
+    
+    
+}
+
+.nav-bar-a{
+    font-size: 1.6em;
+    margin-right:20px;
+    color:black;
+    
+}
+
+
+
+/* Estilos para el contenedor principal */
+.init {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    width: 100%; /* Ancho completo de la ventana */
+    height: 100%; /* Alto completo de la ventana */
+    flex-direction: column; /* Disposición vertical */
+    background: conic-gradient(#F06BF2, #F194F2, #F2CB05, #F2BE5C, #F06BF2);
+    position: relative;
+    overflow: hidden; /* Asegura que el contenido no se desborde */
+}
+/* Imagen de fondo que aparecerá en hover */
+.init::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('butterflye.png'); /* URL de la imagen de fondo */
+    background-size: 300px 300px; /* Asegura que la imagen conserve su tamaño original */
+    background-repeat: repeat; /* Hace que la imagen se repita */
+    background-position: center;
+    opacity: 0; /* Oculta la imagen por defecto */
+    transition: opacity 0.3s ease-in-out;
+    z-index: 0; /* Asegura que esté debajo del contenido */
+    object-fit: cover;
+    background-color: #76e842;
+}
+/* Mostrar la imagen de fondo en hover */
+.init:hover::before {
+    opacity: 0.5; /* Ajusta la opacidad según la visibilidad que prefieras */
+}
+/* Estilos del contenido en init-style */
+.init-style {
+    text-align: center; /* Centrar texto */
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Asegura que el contenido esté encima del fondo en hover */
+}
+
+.title-init, .img-init-flower, .slogan-init {
+    position: relative;
+    z-index: 2; /* Asegura que estén encima de la imagen de fondo en hover */
+}
+
+.title-init {
+    font-size: 4rem; /* Tamaño del título */
+    margin-bottom: 1rem; /* Espaciado debajo del título */
+    color:rgb(255, 255, 255);
+    font-family: "Cormorant Garamond",serif;
+    margin-top: 2rem;
+    z-index: -500;
+    font-weight: bold;
+}
+
+.img-init-flower {
+    max-width: 50%; /* Ajustar el ancho de la imagen */
+    height: auto; /* Mantener la proporción de la imagen */
+    margin: 1rem 0; /* Espaciado vertical para la imagen */
+    z-index: -400;
+}
+
+.slogan-init {
+    font-size: 2.5rem; /* Tamaño del eslogan */
+    margin-top: 1rem; /* Espaciado encima del eslogan */
+    color:rgb(255, 255, 255);
+    margin-bottom: 2rem;
+    font-weight: bold;
+    z-index: -300;
+    font-family: "Cormorant Garamond",serif;
+}
+
+.flowers{
+    height: 100vh ;
+    margin-bottom: 3%;
+    
+
+}
+.div-title-flowers{
+    display: flex;
+    justify-content: center;
+    margin-top:3rem;
+}
+
+.title-flowers{
+    font-size: 4rem;
+    font-family: "Cormorant Garamond",serif;
+}
+
+.carousel {
+    position: relative;
+    
+}
+
+#carouselExampleCaptions {
+    width: 55%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top:40px !important;
+}
+
+.carousel-inner {
+    margin-top: 5vh;
+}
+
+.card {
+    width: 100%;
+    height: 80%;
+    transition: 1s;
+    clip-path: polygon(0 5%, 100% 0, 100% 55%, 0 85%);
+    margin: auto;
+    overflow: hidden;
+}
+
+.card:hover .card-text,
+.card:hover .card-title {
+    opacity: 1; /* Muestra el texto */
+}
+
+.card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-img-top:hover {
+    filter: blur(4px); /* Difumina la imagen */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    display: flex; /* Utiliza flexbox para alinear los botones */
+    align-items: center; /* Centra los botones verticalmente */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    height: 50px; /* Ajusta la altura de los botones */
+    width: 50px; /* Ancho del botón */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente opcional */
+    border: none; /* Elimina bordes */
+    position: absolute; /* Posiciona los botones dentro del carrusel */
+    top: 50%; /* Centra verticalmente en el carrusel */
+    transform: translateY(-50%); /* Ajuste para centrar exactamente */
+}
+
+.carousel-control-prev {
+    left: 10px; /* Ajusta la posición a la izquierda */
+}
+
+.carousel-control-next {
+    right: 10px; /* Ajusta la posición a la derecha */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 30px; /* Ajusta el tamaño del icono */
+    height: 30px;
+}
+
+.card-text,
+.card-title {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    text-align: center;
+
+}
+
+.card-text{
+    top: 45%;
+    left: 50%;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.card-title{
+    font-weight: bold;
+    top: 20%;
+    left: 50%;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.627);
+    color: beige !important;
+
+}
+
+.about-us {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.left-side, .right-side {
+    width: 100%;
+    height: 100%;
+}
+
+.right-side {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-about-us {
+    font-family: "Cormorant Garamond", serif;
+    color: black;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.content-right {
+    padding: 5%;
+    font-size: 1.2rem;
+    color: black;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.left-side {
+    display: flex;
+    overflow: hidden;
+}
+
+.img-about-us {
+    width: 20%;
+    height: 100%; /* Ocupa el 100% de la altura del contenedor */
+    object-fit: cover;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.img-about-us:hover {
+    width: 60%;
+    opacity: 1;
+    z-index: 10;
+}
+
+/* Media queries para hacer responsive */
+@media (max-width: 768px) {
+    .about-us {
+        height: auto; /* Elimina el 100vh en resoluciones bajas */
+        grid-template-columns: 1fr; /* Cambia a una sola columna */
+    }
+
+    .left-side {
+        height: auto; /* Ajusta la altura para evitar desbordes */
+    }
+
+    .title-about-us {
+        font-size: 2rem; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+    }
+
+    .content-right {
+        font-size: 1rem; /* Ajusta el tamaño de la fuente para pantallas pequeñas */
+        padding: 3%;
+    }
+
+    .img-about-us {
+        width: 15%; /* Ajusta el ancho de las imágenes para pantallas pequeñas */
+        height: auto; /* Ajusta la altura para mantener proporciones */
+    }
+
+    .img-about-us:hover {
+        width: 45%; /* Expansión moderada en hover para evitar desbordes */
+    }
+}
+@media (max-width: 480px) {
+    .title-about-us {
+        font-size: 1.5rem;
+    }
+
+    .content-right {
+        font-size: 0.9rem;
+        padding: 2%;
+    }
+
+    .img-about-us {
+        width: 12%; /* Reduce aún más el tamaño en móviles */
+        margin:  auto; /* Asegura que las imágenes estén centradas */
+        margin-bottom:15%
+    }
+
+    .img-about-us:hover {
+        width: 35%; /* Menor expansión en hover para evitar desbordes */
+    }
+
+    .flowers{
+        height: 100%;
+    }
+}
+
+.footer{
+    background-color: rgb(82, 82, 82);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.footer p{
+    color:rgb(255, 255, 255);
+    
+ }
